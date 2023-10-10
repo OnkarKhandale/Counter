@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 120px;
+        }
+
+        .button.increase {
+            background-color: green;
+            color: white;
+        }
+
+        .button.decrease {
+            background-color: orange;
+            color: white;
+        }
+
+        .button.reset {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div class="counter" id="count">0</div>
+    <div class="button-container">
+        <button class="button increase" onclick="increaseCount()">Increase</button>
+        <button class="button reset" onclick="resetCount()">Reset</button>
+        <button class="button decrease" onclick="decreaseCount()">Decrease</button>
+    </div>
+
+    <script>
+        let countValue = 0;
+
+        function updateCounter() {
+            document.getElementById("count").innerText = countValue;
+        }
+
+        function increaseCount() {
+            countValue++;
+            updateCounter();
+        }
+
+        function decreaseCount() {
+            countValue--;
+            updateCounter();
+        }
+
+        function resetCount() {
+            countValue = 0;
+            updateCounter();
+        }
+    </script>
+</body>
+</html>
